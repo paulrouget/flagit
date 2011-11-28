@@ -1,89 +1,13 @@
-" FlagIt
-" 2006-06-21, Paul Rouget <paul.rouget@no-log.org>
+" FlagIt - https://github.com/paulrouget/flagit
+" 2006-06-21, @paulrouget
 "
 " Thanks to Brian Wang's VisualMark.vim: http://www.vim.org/scripts/script.php?script_id=1026
-"
-" ---------------------------------------------------------------------
-" Version: 0.1
-"
-" Description:
-" FlagIt privides a simple way to flag lines with icons or characters.
-"
-" Installation:
-" Drop it into your plugin directory.
-"
-" Usage:
-" g:Fi_Flags
-" 	a dictionnary which describes the flags
-"		Synopsis:
-"		an item: '"flagName" : ["aUrlToTheImagePath", "aText, One or two character", uniq, "additionnal options"]'
-"
-"		"flagName" : an uniq identifier
-"		"aUrlToTheImagePath" : The path to a pixmap. The flag will be drawn as a pixmap (if GUI avaible and g:Fi_OnlyText is 0).
-"		"aText" : One or two character. The flag will be drawn as a text (if GUI not avaible or g:Fi_OnlyText is 1)
-"		"uniq" : If 1, only one instance of this flag will be drawn, else multiple instance will be allowed
-"		"additionnal options" : options added to signs definition (cf. "sign define")
-"
-" 	example:
-"			let g:Fi_Flags = {"fixme" : ["/home/login/.vim/signs/fixme.png", "!!", 0, ""],
-"			\ "error" : ["/home/login/.vim/signs/error.png", "XX", 1, "texthl=ErrorMsg linehl=ErrorMsg"] }
-"
-" g:Fi_ShowMenu
-" 	If 1 and Gui avaible and g:Fi_OnlyText is 0, a menu will be added to the ToolBar.
-"
-"	g:Fi_OnlyText
-"		If 1, pixmap will not be used
-"
-"	FlagList
-"		List all avaible flags
-"
-"	FlagIt flagName [line number]
-"		Add a flag. If line number is not provided, current line is uses
-"		Il a flag is already presents, it will be removed
-"
-"	UnFlag [flagName]
-"		Remove all flags of type flagName
-"		If flagName is not provided,  remove all flags
-"	
-" FlagDemo
-" 	Just a way to draw all kind of flags (for test)
-"
-" TODO:
-" save flags (Modelines ? session ? dedicated file ?)
-"
-" Example:
-" my vimrc:
-" ----
-"map <F1> :FlagIt arrow<CR>
-"map <F2> :FlagIt function<CR>
-"map <F3> :FlagIt warning<CR>
-"map <F4> :FlagIt error<CR>
-"map <F5> :FlagIt step<CR>
-"                                                                                                                                                                                                                                                 
-"map <C-F1> :UnFlag arrow<CR>
-"map <C-F2> :UnFlag function<CR>
-"map <C-F3> :UnFlag warning<CR>
-"map <C-F4> :UnFlag error<CR>
-"map <C-F5> :UnFlag step<CR>
-"                                                                                                                                                                                                                                                 
-"map <F8> :UnFlag<CR>
-"
-"let icons_path = "/home/paul/.vim/signs/"
-"let g:Fi_Flags = { "arrow" : [icons_path."16.png", "> ", 1, "texthl=Title"],
-"			\ "function" : [icons_path."17.png", "+ ", 0, "texthl=Comment"],
-"			\ "warning" : [icons_path."8.png", "! ", 0, "texthl=WarningMsg"],
-"			\ "error" : [icons_path."4.png", "XX", "true", "texthl=ErrorMsg linehl=ErrorMsg"],
-"			\ "step" : [icons_path."5.png", "..", "true", ""] }
-"let g:Fi_OnlyText = 0
-"let g:Fi_ShowMenu = 1
-" ----
-
 
 " ---------------------------------------------------------------------
 " Public Command:
 
 command -nargs=+ FlagIt :call s:FlagALine(<f-args>)
-command -nargs=* UnFlag :call s:UnFlag(<f-args>)
+command -nargs=* UnFlag :call s:UnFlag(<f-args>) "Do we really need to expose this?
 command FlagDemo :call FlagDemo()
 command FlagList :call FlagList()
 

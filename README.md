@@ -18,7 +18,7 @@ Configuration
 =============
 
 - `g:Fi_OnlyText` If 1, force text mode.
-- `g:Fi_ShowMenu` If 1 and Gui avaible and g:Fi_OnlyText is 0, a menu is added to the toolBar.
+- `g:Fi_ShowMenu` If 1 and Gui avaible and g:Fi_OnlyText is 0, a menu is added to the toolbar.
 - `g:Fi_Flags` A dictionnary of flag definitions.
 - A definition is declared as: `name : [path, fallback, isUniq, [optional] signArgs]`
   - `name`: an uniq identifier
