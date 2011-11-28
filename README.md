@@ -3,13 +3,13 @@ FlagIt: flag lines with icons (Vim plugin)
 
 FlagIt is a Vim plugin that adds icons (or text) at the beginning of any marked line.
 
-![FlagIt screenshot](https://github.com/paulrouget/flagit/raw/master/screenshot.png =150x150)
+![FlagIt screenshot](https://github.com/paulrouget/flagit/raw/master/screenshot.png)
 
 Usage
 =====
 - `:FlagIt flagName [line number]` Toggle a flag. If line number is not provided, the current line is used.
-- `:FlagList`: List all avaible flags
-- `:FlagDemo`: Just a way to draw all kind of flags (for tests)
+- `:FlagList` List all avaible flags
+- `:FlagDemo` Just a way to draw all kind of flags (for tests)
 
 
 
@@ -17,15 +17,15 @@ Usage
 Configuration
 =============
 
-- `g:Fi_OnlyText`: If 1, force text mode.
-- `g:Fi_ShowMenu`: If 1 and Gui avaible and g:Fi_OnlyText is 0, a menu is added to the toolBar.
-- `g:Fi_Flags`: A dictionnary of flag definitions.
-- A definition is declared as: `{item: 'name : [path, fallback, isUniq, [optional] signArgs]'`
+- `g:Fi_OnlyText` If 1, force text mode.
+- `g:Fi_ShowMenu` If 1 and Gui avaible and g:Fi_OnlyText is 0, a menu is added to the toolBar.
+- `g:Fi_Flags` A dictionnary of flag definitions.
+- A definition is declared as: `name : [path, fallback, isUniq, [optional] signArgs]`
   - `name`: an uniq identifier
   - `path`: The path to an image. The image will be drawn as a pixmap (if GUI avaible and g:Fi_OnlyText is 0).
   - `fallback`: One or two character. Drawn if text mdoe or  g:Fi_OnlyText is 1.
   - `uniq`: If 1, only one instance of this flag will be drawn (any other instance will be disabled). Useful to draw a cursor for example.
-  - `signArgs`: additional argumens to the sign definition (see :sign define)
+  - `signArgs`: additional argumens to the sign definition (see :sign define). Useful for theming.
 
 Example
 =======
