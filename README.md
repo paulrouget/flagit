@@ -3,7 +3,7 @@ FlagIt: flag lines with icons (Vim plugin)
 
 FlagIt is a Vim plugin that adds icons (or text) at the beginning of any marked line.
 
-![FlagIt screenshot](https://github.com/paulrouget/flagit/raw/master/screenshot.png)
+![FlagIt screenshot](https://github.com/paulrouget/flagit/raw/master/screenshot.png =150x150)
 
 Usage
 =====
